@@ -188,7 +188,7 @@ export default function App() {
             <StageCard
               number={2}
               badge={BADGES.search}
-              label="Web retrieval (Tavily)"
+              label="Web retrieval"
               status={stageStatus(stage, 'search')}
             >
               {sources.length > 0 && (

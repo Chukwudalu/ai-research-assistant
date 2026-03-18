@@ -9,6 +9,8 @@ import { useState, useCallback } from 'react'
 
 const STAGES = ['idle', 'decomposing', 'searching', 'synthesizing', 'done', 'error']
 
+
+
 export function usePipeline() {
   const [stage, setStage] = useState('idle')
   const [subQuestions, setSubQuestions] = useState([])
@@ -31,7 +33,7 @@ export function usePipeline() {
     try {
       // Decompose
       setStage('decomposing')
-      const decomposeRes = await fetch('/api/decompose', {
+      const decomposeRes = await fetch('https://ai-research-assistant-fu90.onrender.com/api/decompose', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),
@@ -42,7 +44,7 @@ export function usePipeline() {
 
       // Search 
       setStage('searching')
-      const searchRes = await fetch('/api/search', {
+      const searchRes = await fetch('https://ai-research-assistant-fu90.onrender.com/api/search', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: JSON.stringify(sub_questions) }),
@@ -55,7 +57,7 @@ export function usePipeline() {
       setStage('synthesizing')
       setAnswer('')
 
-      const synthRes = await fetch('/api/synthesize', {
+      const synthRes = await fetch('https://ai-research-assistant-fu90.onrender.com/api/synthesize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
