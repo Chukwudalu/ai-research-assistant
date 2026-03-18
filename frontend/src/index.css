@@ -1,0 +1,43 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  --bg:        #0f0f11;
+  --bg-card:   #17171a;
+  --bg-raised: #1e1e22;
+  --border:    rgba(255,255,255,0.07);
+  --border-md: rgba(255,255,255,0.12);
+
+  --text-primary:   #f0eff4;
+  --text-secondary: #8b8a96;
+  --text-muted:     #4e4d58;
+
+  --accent:        #7c6af7;
+  --accent-dim:    rgba(124, 106, 247, 0.15);
+  --accent-border: rgba(124, 106, 247, 0.35);
+
+  --green:      #3ecf8e;
+  --green-dim:  rgba(62, 207, 142, 0.12);
+  --amber:      #f59e0b;
+  --amber-dim:  rgba(245, 158, 11, 0.12);
+  --red:        #ef4444;
+}
+
+html, body { height: 100%; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-md); border-radius: 3px; }
+
+::selection { background: var(--accent-dim); }
